@@ -32,11 +32,16 @@ export default function readBaseOnibus(){
                   nome:row[1],
                   nome_da_mae:row[2],
                   nome_do_pai:row[3],
-                  sexo:row[4].toUpperCase(),
+                  sexo:trataSexo(row[4].toUpperCase()),
                   data_de_nascimento: newDate(row[5]),
                   onibus:row[6]
                 }
     return obj
+  }
+  const trataSexo = (string) =>{
+    if (string === 'M') return 'F'
+    else if(string === 'H') return 'M'
+    else return ''
   }
   const newDate = (date) => {
     if(date === null || undefined) return ''

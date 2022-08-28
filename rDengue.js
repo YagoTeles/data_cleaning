@@ -30,10 +30,10 @@ export default function readBaseDengue(){
     const obj = {
                   id: row[0],
                   nome:row[1],
-                  nome_da_mae:row[2],
-                  nome_do_pai:row[3],
+                  nome_da_mae:row[3],
+                  nome_do_pai:row[2],
                   sexo:row[4].toUpperCase(),
-                  data_de_nascimento: newDate(row[5]),
+                  data_de_nascimento: parseInt(newDate(row[6]).split('/')[2])> parseInt(newDate(row[5]).split('/')[2])  ? newDate(row[5]) : '',
                   data_da_dengue:newDate(row[6])
                 }
     return obj
